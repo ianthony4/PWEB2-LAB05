@@ -12,8 +12,16 @@
     </header>
 
     <main>
-        {% block content %} {% endblock %}
-        <!-- <form>
+        <!--Esta es la barra de navegacion-->
+        <div class="navbar">
+            <a class="active" href="index.html">Inicio</a>
+            <a href="crear.html">Blogs</a>
+        </div>
+        {% block content %} 
+        {% endblock %}
+        
+        <!-- Formulario para los blogs
+            <form>
             <label for="titulo">Título:</label>
             <input type="text" id="titulo" name="titulo" required><br><br>
 
