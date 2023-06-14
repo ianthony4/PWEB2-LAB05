@@ -9,5 +9,8 @@ def myHomeView(request, *args, **kwargs):
 def createView(request):
     return render(request,"crear.html",{})
 
+def blogView(request):
+    return render(request,"blogs.html",{})
+
 def editView(request):
     return render(request,"editar.html",{})

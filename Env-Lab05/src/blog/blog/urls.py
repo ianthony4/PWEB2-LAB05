@@ -20,7 +20,8 @@ from inicio import views
 
 urlpatterns = [
     path('', views.myHomeView, name='Pagina de inicio'),
-    path('crear/', views.createView, name='Crear Blog'),
+    path('crear/', views.createView, name='CrearBlog'),
     path('editar/', views.editView, name='Editar Blog'),
+    path('blogs/', views.blogView, name='Blogs'),
     path('admin/', admin.site.urls),
 ]
