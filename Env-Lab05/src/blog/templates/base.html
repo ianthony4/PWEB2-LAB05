@@ -12,7 +12,8 @@
     </header>
 
     <main>
-        <form>
+        {% block content %} {% endblock %}
+        <!-- <form>
             <label for="titulo">Título:</label>
             <input type="text" id="titulo" name="titulo" required><br><br>
 
@@ -20,7 +21,7 @@
             <textarea id="contenido" name="contenido" rows="4" cols="50" required></textarea><br><br>
 
             <input type="submit" value="Guardar">
-        </form>
+        </form> -->
     </main>
 
     <footer>
