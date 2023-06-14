@@ -13,8 +13,8 @@
     <main>
         <!--Esta es la barra de navegacion-->
         <div class="navbar">
-            <a class="active" href="/">Inicio</a>
-            <a class="active" href="/crear/">Blogs</a>
+            <a class="active" href="{% url 'Pagina de inicio' %}">Inicio</a>
+            <a class="active" href="{% url 'Crear Blog' %}">Blogs</a>
         </div>
         {% block content %} 
 
