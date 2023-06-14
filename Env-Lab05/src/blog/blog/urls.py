@@ -22,7 +22,7 @@ from inicio.views import editView
 
 urlpatterns = [
     path('', myHomeView, name='Pagina de inicio'),
-    path('crear/', createView, name ='Crear Blog'),
-    path('editar/', editView, name ='Editar Blog'),
+    path('crear/', createView, name='Crear Blog'),
+    path('editar/', editView, name='Editar Blog'),
     path('admin/', admin.site.urls),
 ]
