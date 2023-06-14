@@ -1,35 +1,5 @@
-<!--Creando template para mi pagina de inicio-->
-<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mi blog personal</title>
-        <!--
-        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-        -->
-    </head>
-    <body>
-        <header>
-            <h1>Mi blog personal</h1>
-        </header>
-    
-        <main>
-            <form>
-                <label for="titulo">Título:</label>
-                <input type="text" id="titulo" name="titulo" required><br><br>
-    
-                <label for="contenido">Contenido:</label><br>
-                <textarea id="contenido" name="contenido" rows="4" cols="50" required></textarea><br><br>
-    
-                <input type="submit" value="Guardar">
-            </form>
-        </main>
-    
-        <footer>
-            <p>Autor: Anthony Chaisa</p>
-        </footer>
-    </body>
-    </html>
-    
-</html>
+{% extends "base.html" %}
+
+{% block titulo %} Mi Blog Personal {% endblock %}
+
+{% block tituloh %} Mi Blog Personal {% endblock %}
