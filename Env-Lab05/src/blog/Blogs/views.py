@@ -13,7 +13,7 @@ def createView(request):
 def blogView(request):
     losBlogs = Blogs.objects.all()
     print(losBlogs)
-    return render(request,"blogs.html",{})
+    return render(request,"blogs.html",{'losBlogs':losBlogs})
 
 def editView(request):
     return render(request,"editar.html",{})

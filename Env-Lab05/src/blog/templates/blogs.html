@@ -7,18 +7,22 @@
 {% block content %}
 
     <h4> Lista de libros</h4>
+    
     <table class="table">
         <thead>
+            
             <tr>
                 <th>Titulo</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
+            {% for blog in losBlogs %}
             <tr>
-                <td>Prueba</td>
+                <td>{{ blog.titulo }}</td>
                 <td><a href="{% url 'EditarBlog' %}">Editar</a>|Borrar</td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
     <a href="{% url 'CrearBlog' %}">Crear un Blog</a>  
