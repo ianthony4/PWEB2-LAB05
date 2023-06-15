@@ -20,8 +20,13 @@ def blogView(request):
     print(losBlogs)
     return render(request,"blogs.html",{'losBlogs':losBlogs})
 
-def editView(request):
-    return render(request,"editar.html",{})
+def editView(request, titulo):
+    blog = Blogs.objects.get(titulo=titulo)
+    formulario = blogForm(request.POST or None, instance=blog)
+    if formulario.is_valid() and request.method == 'POST':
+        formulario.save()
+        return redirect('Blogs')
+    return render(request,"editar.html",{'formulario':formulario})
 
 def eliminar(request, titulo):
     blog = Blogs.objects.get(titulo=titulo)

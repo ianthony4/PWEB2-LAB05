@@ -22,7 +22,7 @@ from Blogs import views
 urlpatterns = [
     path('', views.myHomeView, name='Pagina de inicio'),
     path('crear/', views.createView, name='CrearBlog'),
-    path('editar/', views.editView, name='EditarBlog'),
+    path('editar/<str:titulo>', views.editView, name='EditarBlog'),
     path('blogs/', views.blogView, name='Blogs'),
     path('eliminar/<str:titulo>', views.eliminar, name='eliminar'),
     path('admin/', admin.site.urls),

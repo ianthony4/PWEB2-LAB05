@@ -20,7 +20,7 @@
             {% for blog in losBlogs %}
             <tr>
                 <td>{{ blog.titulo }}</td>
-                <td><a href="{% url 'EditarBlog' %}">Editar</a>| <a href= "{% url 'eliminar' blog.titulo %}">Borrar</a></td>
+                <td><a href="{% url 'EditarBlog' blog.titulo %}">Editar</a>| <a href= "{% url 'eliminar' blog.titulo %}">Borrar</a></td>
             </tr>
             {% endfor %}
         </tbody>
