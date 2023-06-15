@@ -24,5 +24,6 @@ urlpatterns = [
     path('crear/', views.createView, name='CrearBlog'),
     path('editar/', views.editView, name='EditarBlog'),
     path('blogs/', views.blogView, name='Blogs'),
+    path('eliminar/<str:titulo>', views.eliminar, name='eliminar'),
     path('admin/', admin.site.urls),
 ]

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Blogs
 
 # Create your views here.
@@ -17,3 +17,8 @@ def blogView(request):
 
 def editView(request):
     return render(request,"editar.html",{})
+
+def eliminar(request, titulo):
+    blog = Blogs.objects.get(titulo=titulo)
+    blog.delete()
+    return redirect('Blogs')
