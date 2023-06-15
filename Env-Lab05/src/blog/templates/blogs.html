@@ -20,12 +20,12 @@
             {% for blog in losBlogs %}
             <tr>
                 <td>{{ blog.titulo }}</td>
-                <td><a href="{% url 'EditarBlog' blog.titulo %}">Editar</a>| <a href= "{% url 'eliminar' blog.titulo %}">Borrar</a></td>
+                <td><a href="{% url 'EditarBlog' blog.titulo %}">Editar</a>| <a href= "{% url 'eliminar' blog.titulo %}">Borrar</a></td><br>
             </tr>
             {% endfor %}
-        </tbody>
+        </tbody><br>
     </table>
-    <a href="{% url 'CrearBlog' %}">Crear un Blog</a>  
+    <br><a href="{% url 'CrearBlog' %}">Crear un Blog</a>  
 
     
 {% endblock %}

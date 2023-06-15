@@ -2,7 +2,7 @@
 <form enctype="multipart/form-data" method="post">
     {% csrf_token %}
     {% for campo in formulario %}
-        <label for="">{{ campo.label }}:</label>
+        <label for="">{{ campo.label }}:</label><br>
         <input 
         type="{{ campo.field.widget.input_type }}" 
         name="{{ campo.name }}"
@@ -11,6 +11,5 @@
         <!--CONTROL DE ERRORES-->
         <div class="col-12 help-text">{{ campo.errors }}</div>    
     {% endfor %}
-    <input type="submit" value="Guardar">
-    <a href="{{ url 'Blogs' }}">Cancelar</a>
+    <input type="submit" value="Guardar"><br>
 </form>
