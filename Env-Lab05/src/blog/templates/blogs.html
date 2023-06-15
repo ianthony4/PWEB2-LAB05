@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block titulo %} Blogs Creados{% endblock %}
+
+{% block tituloh %} Blogs disponibles{% endblock %}
+
+{% block content %}
+
+    <h4> Lista de libros</h4>
+    
+    <table class="table">
+        <thead>
+            
+            <tr>
+                <th>Titulo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for blog in losBlogs %}
+            <tr>
+                <td>{{ blog.titulo }}</td>
+                <td><a href="{% url 'EditarBlog' blog.titulo %}">Editar</a>| <a href= "{% url 'eliminar' blog.titulo %}">Borrar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'CrearBlog' %}">Crear un Blog</a>  
+
+    
+{% endblock %}

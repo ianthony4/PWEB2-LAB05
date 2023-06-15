@@ -1,0 +1,16 @@
+<!--Este formulario es diamico, el tipo del input se adapta a los diferentes tipos de datos que tiene el objeto-->
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {% for campo in formulario %}
+        <label for="">{{ campo.label }}:</label>
+        <input 
+        type="{{ campo.field.widget.input_type }}" 
+        name="{{ campo.name }}"
+        value="{{ campo.value | default:' ' }}"
+        required><br>
+        <!--CONTROL DE ERRORES-->
+        <div class="col-12 help-text">{{ campo.errors }}</div>    
+    {% endfor %}
+    <input type="submit" value="Guardar">
+    <a href="{{ url 'Blogs' }}">Cancelar</a>
+</form>
