@@ -1,9 +1,14 @@
+<!--Este formulario es diamico, el tipo del input se adapta a los diferentes tipos de datos que tiene el objeto-->
 <form enctype="multipart/form-data" method="post">
-    <label for="titulo">Título:</label>
-    <input type="text" id="titulo" name="titulo" required><br><br>
-
-    <label for="contenido">Contenido:</label><br>
-    <textarea id="contenido" name="contenido" rows="25" cols="75" required></textarea><br><br>
-
+    
+    {% for campo in formulario %}
+        <label for="">{{ campo.label }}:</label>
+        <input 
+        type="{{ campo.field.widget.input_type }}" 
+        name="{{ campo.name }}" 
+        required><br>
+        <!--CONTROL DE ERRORES-->
+        <div class="col-12 help-text">{{ campo.errors }}</div>    
+    {% endfor %}
     <input type="submit" value="Guardar">
 </form>

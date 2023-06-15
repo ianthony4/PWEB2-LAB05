@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Blogs
+from .forms import blogForm
 
 # Create your views here.
 def myHomeView(request, *args, **kwargs):
@@ -8,7 +9,8 @@ def myHomeView(request, *args, **kwargs):
     return render(request,"index.html",{})
 
 def createView(request):
-    return render(request,"crear.html",{})
+    formulario = blogForm(request.POST or None)
+    return render(request,"crear.html",{'formulario':formulario})
 
 def blogView(request):
     losBlogs = Blogs.objects.all()
