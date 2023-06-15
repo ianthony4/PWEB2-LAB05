@@ -1,6 +1,6 @@
 <!--Este formulario es diamico, el tipo del input se adapta a los diferentes tipos de datos que tiene el objeto-->
 <form enctype="multipart/form-data" method="post">
-    
+    {% csrf_token %}
     {% for campo in formulario %}
         <label for="">{{ campo.label }}:</label>
         <input 

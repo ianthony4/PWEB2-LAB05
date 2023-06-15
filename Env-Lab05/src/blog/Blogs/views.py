@@ -10,6 +10,9 @@ def myHomeView(request, *args, **kwargs):
 
 def createView(request):
     formulario = blogForm(request.POST or None)
+    if(formulario.is_valid()):
+        formulario.save()
+        return redirect('Blogs')
     return render(request,"crear.html",{'formulario':formulario})
 
 def blogView(request):
